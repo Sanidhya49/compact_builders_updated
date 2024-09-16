@@ -82,3 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial render
     updateTable();
   });
+
+function goback(){
+    window.location.href = "project_list.html";
+}
