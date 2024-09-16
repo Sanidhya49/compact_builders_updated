@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compact Developer | Project</title>
+    <title>CB | Project</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pl-styles.css">
     <script src="script.js" defer></script>
@@ -214,7 +214,7 @@
                             <td class="pl-data">Completed</td>
                             <td class="pl-data pl-action-buttons">
                                 <button class="pl-view-btn" onclick="plViewProject(this)">VIEW</button>
-                                <button class="pl-status-btn" onclick="plOpenStatusForm(this)">Status</button>
+                                <button class="pl-status-btn" onclick="plOpenStatusForm(this)">Update Status</button>
                                 <button class="pl-delete-btn" onclick="plDeleteProject(this)">Delete</button>
                             </td>
                         </tr>
@@ -229,26 +229,24 @@
             </div>
         </div>
     
-        <div id="plProjectViewPage" class="pl-hidden">
+        <!-- <div id="plProjectViewPage" class="pl-hidden">
             <h2 id="plProjectName"></h2>
             <p>Project Area: <span id="plProjectArea"></span></p>
             <p>Address: <span id="plProjectAddress"></span></p>
             <p>Description: <span id="plProjectDescription"></span></p>
             <p>Status: <span id="plProjectStatus"></span></p>
             <button onclick="plGoBack()">Back to List</button>
-        </div>
+        </div> -->
     
+        <!-- PROJECT LIST page, 'UPDATE STATUS' btn HTML CODES -->
         <div id="plPopupOverlay" class="pl-popup-overlay">
             <div id="plPopupCard" class="pl-popup-card">
                 <h2>Update Status</h2>
                 <form id="plStatusForm">
-                    <input type="text" id="plName" placeholder="Name" required>
-                    <input type="text" id="plSurname" placeholder="Surname" required>
                     <select id="plNewStatus" required>
                         <option value="">Select new status</option>
-                        <option value="In Progress">In Progress</option>
+                        <option value="On Going">On Going</option>
                         <option value="Completed">Completed</option>
-                        <option value="On Hold">On Hold</option>
                     </select>
                     <button type="submit">Update Status</button>
                 </form>

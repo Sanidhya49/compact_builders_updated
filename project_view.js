@@ -2,10 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Sample data (replace with your actual data fetching logic)
     const sampleData = [
-        { type: 'Residential', area: '1000 sqft', quantity: 50, booked: 30, notBooked: 20, start: '2024-01-01', end: '2024-12-31' },
-        { type: 'Commercial', area: '5000 sqft', quantity: 10, booked: 5, notBooked: 5, start: '2024-03-15', end: '2025-03-14' },
+        { type: 'EWS Flats (300-350 Sq.ft.) ENCLAVE', area: '300-350 Sq.ft.', quantity: 7, booked: 0, notBooked: 7, start: '1', end: '7' },
+        { type: 'Flats 3 BHK (800-900 Sq.ft.) 1st Floor ENCLAVE', area: '800-900 Sq.ft.', quantity: 14, booked: 10, notBooked: 4, start: '101', end: '114' },
     ];
-  
     const table = document.getElementById('ppProjectTable');
     const tbody = table.querySelector('tbody');
     const searchInput = document.getElementById('ppSearchInput');
