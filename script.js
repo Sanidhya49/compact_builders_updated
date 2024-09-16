@@ -222,33 +222,69 @@ const labelCheck = document.getElementById('label-check');
             toggleSidebar();
         });
 
-// try
-// Get the select elements
-var projectField = document.getElementById("project_field");
-var requirementField = document.getElementById("requirement_field");
+// edit lead gen form
+        const link = document.getElementById('edit_lead_gen');
+        const link1 = document.getElementById('edit_lead_gen1');
+        const popupCard = document.getElementById('popupCard');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const closeButton = document.getElementById('closeButton');
+        const content = document.querySelector('.content');
+        const form = document.getElementById('selectForm');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const successMessage = document.getElementById('successMessage');
+        const headingblur= document.getElementById('v0_row0');
 
-// Function to update the selected options text
-function updateSelectedOptions(selectElement, selectedOptionsElement) {
-  var selectedOptions = [];
-  for (var i = 0; i < selectElement.options.length; i++) {
-    if (selectElement.options[i].selected) {
-      selectedOptions.push(selectElement.options[i].text);
-    }
-  }
-  selectedOptionsElement.textContent = selectedOptions.join(", ");
-}
+        function openPopup() {
+          
+            content.classList.add('blur');
+            popupOverlay.classList.add('show');
+            popupCard.classList.add('show');
+            headingblur.classList.add('blur');
+        }
 
-// Add event listeners to the select elements
-projectField.addEventListener("change", function() {
-  var selectedOptionsElement = this.nextElementSibling;
-  updateSelectedOptions(projectField, selectedOptionsElement);
-});
+        function closePopup() {
+            content.classList.remove('blur');
+            popupOverlay.classList.remove('show');
+            popupCard.classList.remove('show');
+            headingblur.classList.remove('blur');
+            form.reset();
+            successMessage.style.display = 'none';
+        }
 
-requirementField.addEventListener("change", function() {
-  var selectedOptionsElement = this.nextElementSibling;
-  updateSelectedOptions(requirementField, selectedOptionsElement);
-});
+        function validateForm() {
+            let isValid = true;
+            const requiredFields = ['name', 'occupation', 'type', 'contact', 'whatsapp', 'budget', 'requirement', 'projects', 'status'];
+            
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (input.value.trim() === '') {
+                    input.style.borderBottomColor = 'red';
+                    isValid = false;
+                } else {
+                    input.style.borderBottomColor = '';
+                }
+            });
 
-// Initialize the selected options text
-updateSelectedOptions(projectField, projectField.nextElementSibling);
-updateSelectedOptions(requirementField, requirementField.nextElementSibling);
+            return isValid;
+        }
+
+        link.addEventListener('click', openPopup);
+        link1.addEventListener('click', openPopup);
+        closeButton.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', closePopup);
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validateForm()) {
+                loadingIndicator.style.display = 'block';
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    setTimeout(closePopup, 2000);
+                }, 1500);
+            }
+        });
+
+
+
+
