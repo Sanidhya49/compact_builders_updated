@@ -1432,6 +1432,135 @@ body {
   }
 
 
+  /* this css is of project list view table */
+  :root {
+    --pp-gold-color: #d4af37;
+  }
+  
+  .pp-container {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    border: 1px solid var(--pp-gold-color);
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto;
+  }
+  
+  .pp-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #ppEntriesSelect, #ppSearchInput {
+    padding: 8px;
+    border: 1px solid var(--pp-gold-color);
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  #ppEntriesSelect:focus, #ppSearchInput:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--pp-gold-color);
+  }
+  
+  #ppProjectTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .pp-data {
+    text-align: left;
+    padding: 15px;
+  }
+  
+  .pp-heading {
+    background-color: #000000;
+    color: var(--pp-gold-color);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--pp-gold-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-align: left;
+    padding: 15px;
+  }
+  
+  .pp-row {
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pp-row:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  }
+  
+  .pp-view-btn {
+    background-color: var(--pp-gold-color);
+    color: #000000;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .pp-view-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+  }
+  
+  .pp-pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .pp-pagination button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    border: 1px solid var(--pp-gold-color);
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .pp-pagination button:hover, .pp-pagination button.active {
+    background-color: var(--pp-gold-color);
+    color: #000000;
+  }
+  
+  .pp-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .pp-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 237px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #000000, #f0be29);
+  }
+
+
 
 
 
