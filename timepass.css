@@ -1,0 +1,145 @@
+:root {
+    --gold-color: #d4af37;
+  }
+  
+  .container1010 {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+    border: 1px solid var(--gold-color);
+    position: absolute;
+    top: 220px;
+    width: 1400px;
+  }
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  #entriesSelect, #searchInput {
+    padding: 8px;
+    border: 1px solid var(--gold-color);
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  #entriesSelect:focus, #searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--gold-color);
+  }
+  #projectTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  #table_data1010 {
+    text-align: left;
+    padding: 15px;
+  }
+  .heading1010 {
+    background-color: #000000;
+    color: var(--gold-color);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-align: left;
+    padding: 15px;
+  }
+  #row1010 {
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  #row1010:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  }
+  .action-buttons {
+    display: flex;
+    gap: 5px;
+  }
+  .action-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  .view-btn { background-color: var(--gold-color); color: #000000; }
+  .status-btn { background-color: #000000; color: var(--gold-color); border: 1px solid var(--gold-color); }
+  .delete-btn { background-color: #f44336; color: #ffffff; }
+  .action-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+  }
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .pagination button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    border: 1px solid var(--gold-color);
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .pagination button.active, .pagination button:hover {
+    background-color: var(--gold-color);
+    color: #000000;
+  }
+  
+  .title_of_project1010 {
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+  }
+  .title_of_project1010::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 237px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #000000, #f0be29);
+  }
+  
+  /* Styles for the popup */
+  .hidden {
+      display: none;
+  }
+  .blur {
+      filter: blur(5px);
+  }
+  .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+  }
+  .popup-card {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      display: none;
+  }
+  .show {
+      display: block;
+  }

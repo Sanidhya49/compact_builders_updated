@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compact Developer | Project</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pl-styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -176,77 +177,85 @@
 
 
         <!-- project list table -->
-        <div class="container1010">
-            <div class="table-header">
-                <div>
-                    <label for="entriesSelect">Show</label>
-                    <select id="entriesSelect">
-                        <option>50</option>
-                        <option>100</option>
-                        <option>150</option>
-                    </select>
-                    <label for="entriesSelect">entries</label>
+        <div id="plProjectListPage">
+            <div class="pl-container">
+                <div class="pl-table-header">
+                    <div>
+                        <label for="plEntriesSelect">Show</label>
+                        <select id="plEntriesSelect">
+                            <option>50</option>
+                            <option>100</option>
+                            <option>150</option>
+                        </select>
+                        <label for="plEntriesSelect">entries</label>
+                    </div>
+                    <div>
+                        <label for="plSearchInput">Search:</label>
+                        <input type="text" id="plSearchInput">
+                    </div>
                 </div>
-                <div>
-                    <label for="searchInput">Search:</label>
-                    <input type="text" id="searchInput">
+                <table id="plProjectTable">
+                    <thead>
+                        <tr>
+                            <th class="pl-heading">Project Name</th>
+                            <th class="pl-heading">Project Area</th>
+                            <th class="pl-heading">Address</th>
+                            <th class="pl-heading">Description</th>
+                            <th class="pl-heading">Status</th>
+                            <th class="pl-heading">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="pl-row">
+                            <td class="pl-data">Maa Narmade Cityhomes</td>
+                            <td class="pl-data">51,000 Sq.ft.</td>
+                            <td class="pl-data">Bilhari Kajarwara</td>
+                            <td class="pl-data">Residential Township</td>
+                            <td class="pl-data">Completed</td>
+                            <td class="pl-data pl-action-buttons">
+                                <button class="pl-view-btn" onclick="plViewProject(this)">VIEW</button>
+                                <button class="pl-status-btn" onclick="plOpenStatusForm(this)">Status</button>
+                                <button class="pl-delete-btn" onclick="plDeleteProject(this)">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+                <div class="pl-pagination">
+                    <button>Previous</button>
+                    <button class="active">1</button>
+                    <button>Next</button>
                 </div>
-            </div>
-            <table id="projectTable">
-                <thead>
-                    <tr>
-                        <th class="heading1010">Project Name</th>
-                        <th class="heading1010">Project Area</th>
-                        <th class="heading1010">Address</th>
-                        <th class="heading1010">Description</th>
-                        <th class="heading1010">Status</th>
-                        <th class="heading1010">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="row1010">
-                        <td id="table_data1010">Maa Narmade Cityhomes</td>
-                        <td id="table_data1010">51,000 Sq.ft.</td>
-                        <td id="table_data1010">Bilhari Kajarwara</td>
-                        <td id="table_data1010">Residential Township</td>
-                        <td id="table_data1010">Completed</td>
-                        <td id="table_data1010" class="action-buttons">
-                            <button class="view-btn" onclick="viewProject('row1')">VIEW</button>
-                            <button class="status-btn" onclick="changeStatus('row1')">Status</button>
-                            <button class="delete-btn" onclick="deleteProject('row1')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr id="row1010">
-                        <td id="table_data1010">Maa Narmade Greenview</td>
-                        <td id="table_data1010">18,830 sq.ft.</td>
-                        <td id="table_data1010">Bilhari</td>
-                        <td id="table_data1010">Flats</td>
-                        <td id="table_data1010">Completed</td>
-                        <td id="table_data1010" class="action-buttons">
-                            <button class="view-btn" onclick="viewProject('row2')">VIEW</button>
-                            <button class="status-btn" onclick="changeStatus('row2')">Status</button>
-                            <button class="delete-btn" onclick="deleteProject('row2')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr id="row1010">
-                        <td id="table_data1010">Maa Narmade Prime</td>
-                        <td id="table_data1010">2.5 Acre</td>
-                        <td id="table_data1010">Bilhari Pink City Kajarwara</td>
-                        <td id="table_data1010">Plotting Project</td>
-                        <td id="table_data1010">Completed</td>
-                        <td id="table_data1010" class="action-buttons">
-                            <button class="view-btn" onclick="viewProject('row3')">VIEW</button>
-                            <button class="status-btn" onclick="changeStatus('row3')">Status</button>
-                            <button class="delete-btn" onclick="deleteProject('row3')">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="pagination">
-                <button>Previous</button>
-                <button class="active">1</button>
-                <button>Next</button>
             </div>
         </div>
+    
+        <div id="plProjectViewPage" class="pl-hidden">
+            <h2 id="plProjectName"></h2>
+            <p>Project Area: <span id="plProjectArea"></span></p>
+            <p>Address: <span id="plProjectAddress"></span></p>
+            <p>Description: <span id="plProjectDescription"></span></p>
+            <p>Status: <span id="plProjectStatus"></span></p>
+            <button onclick="plGoBack()">Back to List</button>
+        </div>
+    
+        <div id="plPopupOverlay" class="pl-popup-overlay">
+            <div id="plPopupCard" class="pl-popup-card">
+                <h2>Update Status</h2>
+                <form id="plStatusForm">
+                    <input type="text" id="plName" placeholder="Name" required>
+                    <input type="text" id="plSurname" placeholder="Surname" required>
+                    <select id="plNewStatus" required>
+                        <option value="">Select new status</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                        <option value="On Hold">On Hold</option>
+                    </select>
+                    <button type="submit">Update Status</button>
+                </form>
+                <button id="plCloseButton">Close</button>
+            </div>
+        </div>
+    
+        <script src="pl-script.js"></script>
     </body>
 </html>
