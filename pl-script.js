@@ -5,17 +5,7 @@ const plStatusForm = document.getElementById('plStatusForm');
 const plProjectListPage = document.getElementById('plProjectListPage');
 
 function plViewProject(button) {
-    const row = button.closest('tr');
-    const cells = row.getElementsByTagName('td');
-
-    document.getElementById('plProjectName').textContent = cells[0].textContent;
-    document.getElementById('plProjectArea').textContent = cells[1].textContent;
-    document.getElementById('plProjectAddress').textContent = cells[2].textContent;
-    document.getElementById('plProjectDescription').textContent = cells[3].textContent;
-    document.getElementById('plProjectStatus').textContent = cells[4].textContent;
-
-    document.getElementById('plProjectListPage').classList.add('pl-hidden');
-    document.getElementById('plProjectViewPage').classList.remove('pl-hidden');
+    window.open("project_view.html", "_self");
 }
 
 function plGoBack() {
