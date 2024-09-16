@@ -1,0 +1,58 @@
+create database compact_db;
+
+=========================================================
+
+use compact_db;
+
+=========================================================
+
+create table customer 
+(cust_id int(11) auto_increment primary key,
+name char(60) not null,
+contact varchar(15) not null,
+whatsapp_no varchar(15) not null,
+budget varchar(50) not null,
+source_of_info varchar(50) not null,
+profession varchar(50) not null, 
+occupation char(50) not null,
+requirements char(80));
+type varchar(80):
+
+
+==========================================================
+
+create table project
+(project_id int(11) auto_increment primary key,
+project_name char(80) not null,
+project_area  varchar(40),
+project_address varchar(50),
+project_description varchar(50),
+project_photo varchar(30));
+
+============================================================
+
+create table project_plan
+(project_type_id integer(11) auto_increment primary key,
+project_id integer(11),
+project_type char(80) not null,
+area  varchar(40),
+qty integer(10), 
+start integer(10), 
+end integer(10),
+FOREIGN KEY (project_id) REFERENCES project (project_id));
+
+===============================================================
+
+create table lead_gen
+(cust_proj_id integer(11) auto_increment primary key,
+cust_id int(11), 
+project_id int(11),
+project_type_id integer(11),
+allotment_no integer(11),
+FOREIGN KEY (project_id) REFERENCES project(project_id),
+FOREIGN KEY (project_type_id) REFERENCES project_plan(project_type_id),
+FOREIGN KEY (cust_id) REFERENCES customer(cust_id));
+
+================================================================
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head id="head-main">
+    <meta charset="UTF-8" id="meta-charset">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" id="meta-viewport">
+    <title id="title-main">Compact Builders - Login/Sign Up</title>
+    <link rel="stylesheet" href="login.css" id="link-stylesheet">
+</head>
+<body id="body-main">
+    <div class="particles" id="particles-container"></div>
+    <div class="form-container" id="form-container-main">
+        <div class="logo" id="logo-main"><a href="download.png"></a></div>
+        <h1 id="heading-main">Compact Builders</h1>
+        <form id="login-form">
+            <div class="input-group" id="login-email-group">
+                <input type="email" required id="login-email-input">
+                <label for="login-email-input" id="login-email-label">Email</label>
+            </div>
+            <div class="input-group" id="login-password-group">
+                <input type="password" required id="login-password-input">
+                <label for="login-password-input" id="login-password-label">Password</label>
+            </div>
+            <button type="submit" class="btn" id="login-submit-btn">Sign In</button>
+            <div class="links" id="login-links">
+                <a id="show-signup">Sign Up</a>
+            </div>
+        </form>
+        <form id="signup-form">
+            <div class="input-group" id="signup-name-group">
+                <input type="text" required id="signup-name-input">
+                <label for="signup-name-input" id="signup-name-label">Full Name</label>
+            </div>
+            <div class="input-group" id="signup-email-group">
+                <input type="email" required id="signup-email-input">
+                <label for="signup-email-input" id="signup-email-label">Email</label>
+            </div>
+            <div class="input-group" id="signup-password-group">
+                <input type="password" required id="signup-password-input">
+                <label for="signup-password-input" id="signup-password-label">Password</label>
+            </div>
+            <div class="input-group" id="signup-confirm-password-group">
+                <input type="password" required id="signup-confirm-password-input">
+                <label for="signup-confirm-password-input" id="signup-confirm-password-label">Confirm Password</label>
+            </div>
+            <button type="submit" class="btn" id="signup-submit-btn">Sign Up</button>
+            <div class="links" id="signup-links">
+                <a id="show-login">Already have an account? Log In</a>
+            </div>
+        </form>
+    </div>
+
+    <script id="script-main">
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles-container');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('span');
+                particle.classList.add('particle');
+                particle.id = `particle-${i}`;
+
+                const size = Math.random() * 5 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+
+                const duration = Math.random() * 3 + 2;
+                particle.style.animationDuration = `${duration}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Form switching functionality
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+
+        showSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
