@@ -1,0 +1,79 @@
+<h1 class="title_of_project1010">Project List</h1>
+<div id="projectListPage">
+    <div class="container1010">
+        <div class="table-header">
+            <div>
+                <label for="entriesSelect">Show</label>
+                <select id="entriesSelect">
+                    <option>50</option>
+                    <option>100</option>
+                    <option>150</option>
+                </select>
+                <label for="entriesSelect">entries</label>
+            </div>
+            <div>
+                <label for="searchInput">Search:</label>
+                <input type="text" id="searchInput">
+            </div>
+        </div>
+        <table id="projectTable">
+            <thead>
+                <tr>
+                    <th class="heading1010">Project Name</th>
+                    <th class="heading1010">Project Area</th>
+                    <th class="heading1010">Address</th>
+                    <th class="heading1010">Description</th>
+                    <th class="heading1010">Status</th>
+                    <th class="heading1010">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row1010">
+                    <td id="table_data1010">Maa Narmade Cityhomes</td>
+                    <td id="table_data1010">51,000 Sq.ft.</td>
+                    <td id="table_data1010">Bilhari Kajarwara</td>
+                    <td id="table_data1010">Residential Township</td>
+                    <td id="table_data1010">Completed</td>
+                    <td id="table_data1010" class="action-buttons">
+                        <button class="view-btn" onclick="viewProject('row1010')">VIEW</button>
+                        <button class="status-btn" onclick="openStatusForm('row1010')">Status</button>
+                        <button class="delete-btn" onclick="deleteProject('row1010')">Delete</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button>Previous</button>
+            <button class="active">1</button>
+            <button>Next</button>
+        </div>
+    </div>
+</div>
+
+<div id="projectViewPage" class="hidden">
+    <h2 id="projectName"></h2>
+    <p>Project Area: <span id="projectArea"></span></p>
+    <p>Address: <span id="projectAddress"></span></p>
+    <p>Description: <span id="projectDescription"></span></p>
+    <p>Status: <span id="projectStatus"></span></p>
+    <button onclick="goBack()">Back to List</button>
+</div>
+
+<div id="popupOverlay" class="popup-overlay">
+    <div id="popupCard" class="popup-card">
+        <h2>Update Status</h2>
+        <form id="statusForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="surname" placeholder="Surname" required>
+            <select id="newStatus" required>
+                <option value="">Select new status</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+                <option value="On Hold">On Hold</option>
+            </select>
+            <button type="submit">Update Status</button>
+        </form>
+        <button id="closeButton">Close</button>
+    </div>
+</div>

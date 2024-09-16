@@ -807,7 +807,7 @@ body {
 }
 
 /* project page ka project list page ka css*/
-:root {
+/* :root {
   --gold-color: #d4af37;
 }
 
@@ -820,6 +820,7 @@ body {
   position: absolute;
   top: 220px;
   width: 1400px;
+  left: 45px;
 }
 .table-header {
   display: flex;
@@ -847,7 +848,7 @@ body {
   text-align: left;
   padding: 15px;
 }
-.heading1010{
+.heading1010 {
   background-color: #000000;
   color: var(--gold-color);
   text-transform: uppercase;
@@ -855,8 +856,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-}
-.heading1010 {
   text-align: left;
   padding: 15px;
 }
@@ -908,12 +907,13 @@ body {
   color: #000000;
 }
 
-.title_of_project1010{
+.title_of_project1010 {
   font-size: 40px;
   font-weight: bold;
   text-decoration: none;
+  position: relative;
 }
-.title_of_project1010::before{
+.title_of_project1010::before {
   content: '';
   position: absolute;
   left: 0;
@@ -922,7 +922,37 @@ body {
   width: 237px;
   border-radius: 5px;
   background: linear-gradient(135deg, #000000, #f0be29);
+} */
+
+/* Styles for the popup */
+/* .hidden {
+    display: none;
 }
+.blur {
+    filter: blur(5px);
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.popup-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}
+.show {
+    display: block;
+} */
 
 /* once again navbar */
 .v0-navbar-item {
