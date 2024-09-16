@@ -1150,6 +1150,13 @@ body {
 .v0_name-info span {
   padding: 2px 0;
 }
+.info_details{
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  
+}
 
 
 /* edit form lead gen */
