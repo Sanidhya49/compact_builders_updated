@@ -201,22 +201,23 @@
                 <table id="plProjectTable">
                     <thead>
                         <tr>
-                            <th class="pl-heading">Project Name</th>
+                            <th class="pl-heading" >Project Name</th>
                             <th class="pl-heading">Project Area</th>
                             <th class="pl-heading">Address</th>
                             <th class="pl-heading">Description</th>
                             <th class="pl-heading">Status</th>
-                            <th class="pl-heading">Action</th>
+                            <th class="pl-heading"></th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for project in projects %}
                         <tr class="pl-row">
-                            <td class="pl-data">Maa Narmade Cityhomes</td>
-                            <td class="pl-data">51,000 Sq.ft.</td>
-                            <td class="pl-data">Bilhari Kajarwara</td>
-                            <td class="pl-data">Residential Township</td>
-                            <td class="pl-data">Completed</td>
-                            <td class="pl-data pl-action-buttons">
+                            <td class="pl-data" id="pl-name">{{ project.project_name }}</td>
+                            <td class="pl-data"id="pl-area">{{ project.total_area }}</td>
+                            <td class="pl-data" id="pl-address">{{ project.address }}</td>
+                            <td class="pl-data" id="pl-desc" >{{ project.description }}</td>
+                            <td class="pl-data" id="pl-status" >{{ project.status }}</td>
+                            <td class="pl-data pl-action-buttons" id="pl-Action">
                                 <form action="{{ url_for('project_view') }}" method="GET">
                                     <button type="submit" class="pl-view-btn">VIEW</button>
                                 </form>
@@ -226,6 +227,7 @@
                                 
                             </td>
                         </tr>
+                        {% endfor %}
                         <!-- Add more rows as needed -->
                     </tbody>
                 </table>

@@ -80,3 +80,4 @@ document.getElementById('plEntriesSelect').addEventListener('change', function(e
         row.style.display = index < entriesCount ? '' : 'none';
     });
 });
+
