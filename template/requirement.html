@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CB | Project Plan List</title>
+    <title>CB | Lead-Generation</title>
     <link rel="stylesheet" href="../static/styles.css">
     <script src="../static/script.js" defer></script>
 </head>
 <body>
+    
+
+
     <!-- three lines button -->
     <div class="container">
         <input type="checkbox" id="label-check" class="label-check" />
@@ -18,7 +21,7 @@
         <label></label>
         </label>
     </div>
-
+    
     <!-- sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-content">
@@ -132,21 +135,27 @@
 
     <div class="overlay" id="overlay"></div>
 
+    
+
     <!-- navigation bar -->
     <div class="navtabs">
-        <a href=" {{ url_for('lead_gen') }}" class="v0-navbar-item">LEAD-GENERATION</a>
-         <a href=" {{ url_for('customer') }}" class="v0-navbar-item">CUSTOMER</a>
-         <a href=" {{ url_for('project') }}" class="v0-navbar-item">PROJECT</a>
-         <a href=" {{ url_for('profession') }}" class="v0-navbar-item">PROFESSION</a>
-         <a href=" {{ url_for('occupation') }}" class="v0-navbar-item">OCCUPATION</a>
-         <a href=" {{ url_for('budget') }}" class="v0-navbar-item">BUDGET</a>
-         <a href=" {{ url_for('requirement') }}" class="v0-navbar-item">REQUIREMENT</a>
-       <!-- <div class="v0-navbar-item" data-target="page4">PROFESSION</div>
-       <div class="v0-navbar-item" data-target="page5">OCCUPATION</div>
-       <div class="v0-navbar-item" data-target="page6">BUDGET</div>
-       <div class="v0-navbar-item" data-target="page7">REQUIREMENT</div> -->
-       <div class="underline"></div>
-     </div>
+       <a href=" {{ url_for('lead_gen') }}" class="v0-navbar-item">LEAD-GENERATION</a>
+        <a href=" {{ url_for('customer') }}" class="v0-navbar-item">CUSTOMER</a>
+        <a href=" {{ url_for('project') }}" class="v0-navbar-item">PROJECT</a>
+        <a href=" {{ url_for('profession') }}" class="v0-navbar-item">PROFESSION</a>
+        <a href=" {{ url_for('occupation') }}" class="v0-navbar-item">OCCUPATION</a>
+        <a href=" {{ url_for('budget') }}" class="v0-navbar-item">BUDGET</a>
+        <a href=" {{ url_for('requirement') }}" class="v0-navbar-item">REQUIREMENT</a>
+      <!-- <div class="v0-navbar-item" data-target="page4">PROFESSION</div>
+      <div class="v0-navbar-item" data-target="page5">OCCUPATION</div>
+      <div class="v0-navbar-item" data-target="page6">BUDGET</div>
+      <div class="v0-navbar-item" data-target="page7">REQUIREMENT</div> -->
+      <div class="underline"></div>
+    </div>
+
+    
+
+    
 
     <!-- search button -->
      
@@ -167,45 +176,4 @@
         name="searchbar"
     />
     </div>
- 
-<!-- this is for project list view table -->
-    <div class="pp-container">
-        <h1 class="pp-title">Property Projects</h1>
-        <div class="pp-table-header">
-            <select id="ppEntriesSelect">
-                <option value="10">10 entries</option>
-                <option value="25">25 entries</option>
-                <option value="50">50 entries</option>
-                <option value="100">100 entries</option>
-            </select>
-            <input type="text" id="ppSearchInput" placeholder="Search...">
-        </div>
-        <table id="ppProjectTable">
-            <thead>
-                <tr>
-                    <th class="pp-heading">Property Type</th>
-                    <th class="pp-heading">Project Area</th>
-                    <th class="pp-heading">Project Quantity</th>
-                    <th class="pp-heading">Booked</th>
-                    <th class="pp-heading">Not-Booked</th>
-                    <th class="pp-heading">Start</th>
-                    <th class="pp-heading">End</th>
-                    <th class="pp-heading">View</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Table rows will be dynamically added here -->
-            </tbody>
-        </table>
-        <div class="pp-pagination">
-        <form action="{{ url_for('project_list') }}" method="GET">
-            <button type="submit" id="ppPrevBtn">Go Back</button>
-        </form>
-            <!-- <button id="ppPrevBtn" onclick=goback()>Go Back</button> -->
-            <button id="ppNextBtn">Next</button>
-
-        </div>
-    </div>
-    <script src="../static/project_view.js"></script>
-</body>
-</html>
+    <h1>WORK ON PROGRESS</h1>

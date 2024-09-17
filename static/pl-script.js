@@ -4,8 +4,11 @@ const plCloseButton = document.getElementById('plCloseButton');
 const plStatusForm = document.getElementById('plStatusForm');
 const plProjectListPage = document.getElementById('plProjectListPage');
 
+// function plViewProject(button) {
+//     window.open("project_view.html", "_self");
+
 function plViewProject(button) {
-    window.open("project_view.html", "_self");
+    window.location.href = "{{ url_for('project_view')}}";
 }
 
 function plGoBack() {

@@ -138,15 +138,19 @@
 
     <!-- navigation bar -->
     <div class="navtabs">
-        <a href="lead-gen.html" class="v0-navbar-item">LEAD-GENERATION</a>
-        <a href="customer.html" class="v0-navbar-item">CUSTOMER</a>
-        <a href="project_list.html" class="v0-navbar-item">PROJECT</a>
-      <div class="v0-navbar-item" data-target="page4">PROFESSION</div>
-      <div class="v0-navbar-item" data-target="page5">OCCUPATION</div>
-      <div class="v0-navbar-item" data-target="page6">BUDGET</div>
-      <div class="v0-navbar-item" data-target="page7">REQUIREMENT</div>
-      <div class="underline"></div>
-    </div>
+        <a href=" {{ url_for('lead_gen') }}" class="v0-navbar-item">LEAD-GENERATION</a>
+         <a href=" {{ url_for('customer') }}" class="v0-navbar-item">CUSTOMER</a>
+         <a href=" {{ url_for('project') }}" class="v0-navbar-item">PROJECT</a>
+         <a href=" {{ url_for('profession') }}" class="v0-navbar-item">PROFESSION</a>
+         <a href=" {{ url_for('occupation') }}" class="v0-navbar-item">OCCUPATION</a>
+         <a href=" {{ url_for('budget') }}" class="v0-navbar-item">BUDGET</a>
+         <a href=" {{ url_for('requirement') }}" class="v0-navbar-item">REQUIREMENT</a>
+       <!-- <div class="v0-navbar-item" data-target="page4">PROFESSION</div>
+       <div class="v0-navbar-item" data-target="page5">OCCUPATION</div>
+       <div class="v0-navbar-item" data-target="page6">BUDGET</div>
+       <div class="v0-navbar-item" data-target="page7">REQUIREMENT</div> -->
+       <div class="underline"></div>
+     </div>
 
     <!-- search button -->
      
@@ -171,8 +175,8 @@
     <!-- project heading -->
         <nav class="customer_options">
         <span class="title_of_project1010">Project List</span>        
-        <a href="project_list.html" class="element111">Project List</a>                
-        <a href="Project.html" class="elementsss">Create Project</a>        
+        <a href="{{ url_for('project_list') }}" class="element111">Project List</a>                
+        <a href=" {{ url_for('project') }}" class="elementsss">Create Project</a>        
         </nav>
 
 
@@ -213,9 +217,13 @@
                             <td class="pl-data">Residential Township</td>
                             <td class="pl-data">Completed</td>
                             <td class="pl-data pl-action-buttons">
-                                <button class="pl-view-btn" onclick="plViewProject(this)">VIEW</button>
+                                <form action="{{ url_for('project_view') }}" method="GET">
+                                    <button type="submit" class="pl-view-btn">VIEW</button>
+                                </form>
+                                <!-- <button class="pl-view-btn" onclick="plViewProject(this)">VIEW</button> -->
                                 <button class="pl-status-btn" onclick="plOpenStatusForm(this)">Update Status</button>
                                 <button class="pl-delete-btn" onclick="plDeleteProject(this)">Delete</button>
+                                
                             </td>
                         </tr>
                         <!-- Add more rows as needed -->

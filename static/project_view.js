@@ -83,5 +83,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 function goback(){
-    window.location.href = "project_list.html";
+    window.location.href = " {{ url_for('project_list') }}";
 }

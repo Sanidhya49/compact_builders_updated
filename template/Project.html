@@ -137,13 +137,17 @@
 
     <!-- navigation bar -->
     <div class="navtabs">
-        <a href="lead-gen.html" class="v0-navbar-item">LEAD-GENERATION</a>
-        <a href="customer.html" class="v0-navbar-item">CUSTOMER</a>
-        <a href="project_list.html" class="v0-navbar-item">PROJECT</a>
-      <div class="v0-navbar-item" data-target="page4">PROFESSION</div>
+        <a href=" {{ url_for('lead_gen') }}" class="v0-navbar-item">LEAD-GENERATION</a>
+        <a href=" {{ url_for('customer') }}" class="v0-navbar-item">CUSTOMER</a>
+        <a href=" {{ url_for('project') }}" class="v0-navbar-item">PROJECT</a>
+        <a href=" {{ url_for('profession') }}" class="v0-navbar-item">PROFESSION</a>
+        <a href=" {{ url_for('occupation') }}" class="v0-navbar-item">OCCUPATION</a>
+        <a href=" {{ url_for('budget') }}" class="v0-navbar-item">BUDGET</a>
+        <a href=" {{ url_for('requirement') }}" class="v0-navbar-item">REQUIREMENT</a>
+      <!-- <div class="v0-navbar-item" data-target="page4">PROFESSION</div>
       <div class="v0-navbar-item" data-target="page5">OCCUPATION</div>
       <div class="v0-navbar-item" data-target="page6">BUDGET</div>
-      <div class="v0-navbar-item" data-target="page7">REQUIREMENT</div>
+      <div class="v0-navbar-item" data-target="page7">REQUIREMENT</div> -->
       <div class="underline"></div>
     </div>
 
@@ -170,8 +174,8 @@
     <!-- project heading -->
         <nav class="customer_options">
         <span class="title_of_project">Create Project</span>
-        <a href="project_list.html" class="element111">Project List</a>                
-        <a href="Project.html" class="elementsss">Create Project</a>
+        <a href=" {{ url_for('project_list') }}" class="element111">Project List</a>                
+        <a href=" {{ url_for('project') }}" class="elementsss">Create Project</a>
         
         </nav>
 
