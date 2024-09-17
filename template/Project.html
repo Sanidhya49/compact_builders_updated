@@ -180,29 +180,42 @@
         </nav>
 
     <!-- main form -->
-<form action="">
-    <div class="project-form-container-x29"></div>
-        
-            <div class="project-form-group-x29-1" id="project-form-group-x29">
-                <label for="project-name-x29" class="project-form-label-x29">Project Name*</label>
-                <input type="text" id="project-name-x29" class="project-form-input-x29" placeholder="Enter Project Name" required>
-            </div>
-            <div class="project-form-group-x29-2" id="project-form-group-x29">
-                <label for="total-area-x29" class="project-form-label-x29">Total Area*</label>
-                <input type="text" id="total-area-x29" class="project-form-input-x29" placeholder="Enter Project Total Area" required>
-            </div>
-            <div class="project-form-group-x29-3" id="project-form-group-x29">
-                <label for="address-x29" class="project-form-label-x29">Address*</label>
-                <input type="text" id="address-x29" class="project-form-input-x29" placeholder="Enter Address" required>
-            </div>
-            <div class="project-form-group-x29-4" id="project-form-group-x29">
-                <label for="description-x29" class="project-form-label-x29">Description</label>
-                <textarea id="description-x29" class="project-form-input-x29 project-form-textarea-x29" placeholder="Enter Project Description"></textarea>
-            </div>
-            <div class="project-form-group-x29-5" id="project-form-group-x29">
-                <label for="photo-x29" class="project-form-file-label-x29">Choose File</label>
-                <input type="file" id="photo-x29" class="project-form-file-x29" accept="image/*">
-            </div>
+<form action=""><div class="project-form-container-x29"></div>
+
+    <div class="project-form-group-x29-1" id="project-form-group-x29">
+        <label for="project-name-x29" class="project-form-label-x29">Project Name*</label>
+        <input type="text" id="project-name-x29" class="project-form-input-x29" placeholder="Enter Project Name" required>
+    </div>
+    <div class="project-form-group-x29-2" id="project-form-group-x29">
+        <label for="total-area-x29" class="project-form-label-x29">Total Area*</label>
+        <input type="text" id="total-area-x29" class="project-form-input-x29" placeholder="Enter Project Total Area" required>
+    </div>
+    <div class="project-form-group-x29-3" id="project-form-group-x29">
+        <label for="address-x29" class="project-form-label-x29">Address*</label>
+        <input type="text" id="address-x29" class="project-form-input-x29" placeholder="Enter Address" required>
+    </div>
+    <div class="project-form-group-x29-4" id="project-form-group-x29">
+        <label for="description-x29" class="project-form-label-x29">Description</label>
+        <textarea id="description-x29" class="project-form-input-x29 project-form-textarea-x29" placeholder="Enter Project Description"></textarea>
+    </div>
+
+    <!-- New dropdown for project status placed below description -->
+    <div class="project-form-group-x29-5" id="project-form-group-x29">
+        <label for="status-x29" class="project-form-label-x29">Project Status*</label>
+        <select id="status-x29" class="project-form-input-x29" required>
+            <option value="">Select Status</option>
+            <option value="completed">Completed</option>
+            <option value="ongoing">Ongoing</option>
+        </select>
+    </div>
+
+    <div class="project-form-group-x29-6" id="project-form-group-x29">
+        <label for="photo-x29" class="project-form-file-label-x29">Choose File</label>
+        <input type="file" id="photo-x29" class="project-form-file-x29" accept="image/*">
+    </div>
+
+</div>
+
         
     </div>
 

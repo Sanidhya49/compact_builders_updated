@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 import uuid  # to generate unique filenames
-import mysql.connector
+# import mysql.connector
 
 app = Flask(__name__, template_folder='template')
 # app = Flask(__name__,static_folder='static')
