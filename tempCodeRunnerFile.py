@@ -1,1 +1,1 @@
-app = Flask(__name__,static_folder='static')
+submit_project

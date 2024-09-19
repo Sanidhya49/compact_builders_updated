@@ -84,7 +84,7 @@ def success():
     return 'Project created successfully!'
 
 # Route to display project list with data from database
-@app.route('/project_list', methods=['GET'])
+@app.route('/project_list', methods=['GET', 'POST'])
 def project_list():
     conn = connect_db()
     cursor = conn.cursor(dictionary=True)  # Fetch rows as dictionaries for easy access
@@ -98,6 +98,118 @@ def project_list():
 
     # Pass the fetched data to the template
     return render_template('project_list.html', projects=projects)
+
+# Route to delete a project
+@app.route('/delete_project/<int:project_id>', methods=['POST'])
+def delete_project(project_id):
+    # Connect to the database
+    conn = connect_db()
+    cursor = conn.cursor()
+
+    # Execute the delete query
+    query = "DELETE FROM projects WHERE id = %s"
+    cursor.execute(query, (project_id,))
+
+    # Commit and close the connection
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    # Redirect back to the project list after deletion
+    return redirect(url_for('project_list'))
+
+# Route to display the form to update the project status
+@app.route('/update_status/<int:project_id>', methods=['GET', 'POST'])
+def update_status(project_id):
+    conn = connect_db()
+    cursor = conn.cursor(dictionary=True)
+
+    if request.method == 'POST':
+        # Get the new status from the form
+        new_status = request.form.get('status')
+
+        # Update the status in the database
+        query = "UPDATE projects SET status = %s WHERE id = %s"
+        cursor.execute(query, (new_status, project_id))
+
+        # Commit the transaction and close the connection
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        # Redirect back to the project list after updating
+        return redirect(url_for('project_list'))
+
+    # Fetch the project data to display in the form
+    cursor.execute("SELECT * FROM projects WHERE id = %s", (project_id,))
+    project = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    return render_template('update_status.html', project=project)
+
+
+# # Route to handle project form submission
+# @app.route('/submit_project', methods=['POST'])
+# def submit_project():
+#     conn = connect_db()
+#     cursor = conn.cursor()
+
+#     # Loop through each project card and extract the data
+#     for i in range(1, 15):
+#         project_tag = request.form.get(f'hidden_tag_{i}')
+#         area = request.form.get(f'v0-area-{i}')
+#         qty = request.form.get(f'v0-qty-{i}')
+#         start = request.form.get(f'v0-start-{i}')
+#         end = request.form.get(f'v0-end-{i}')
+
+#         # Insert query to save the data in the database
+#         query = """
+#         INSERT INTO projects (project_tag, area, qty, start, end)
+#         VALUES (%s, %s, %s, %s, %s)
+#         """
+#         cursor.execute(query, (project_tag, area, qty, start, end))
+
+#     # Commit the transaction and close the connection
+#     conn.commit()
+#     cursor.close()
+#     conn.close()
+
+#     # Redirect to success or project list page
+#     return redirect(url_for('project_list'))
+
+# # Route to display project list with data from the database
+# @app.route('/project_list_view')
+# def project_list_view():
+#     conn = connect_db()
+#     cursor = conn.cursor(dictionary=True)
+
+#     # Fetch data from the database
+#     cursor.execute("SELECT * FROM projects")
+#     projects = cursor.fetchall()
+
+#     cursor.close()
+#     conn.close()
+
+#     # Pass the fetched data to the template
+#     return render_template('project_list.html', projects=projects)
+
+# # Route to view a specific project in detail
+# @app.route('/project_view/<int:project_id>')
+# def project_view(project_id):
+#     conn = connect_db()
+#     cursor = conn.cursor(dictionary=True)
+
+#     # Fetch the specific project details
+#     cursor.execute("SELECT * FROM projects WHERE id = %s", (project_id,))
+#     project = cursor.fetchone()
+
+#     cursor.close()
+#     conn.close()
+
+#     # Render the project view page with the project details
+#     return render_template('project_view.html', project=project)
 
 if __name__ == '__main__':
     app.run(debug=True)

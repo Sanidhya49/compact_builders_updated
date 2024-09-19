@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Project Status</title>
+</head>
+<body>
+    <h1>Update Status for {{ project.project_name }}</h1>
+    
+    <form action="{{ url_for('update_status', project_id=project.id) }}" method="POST">
+        <label for="status">Update Status:</label>
+        <select name="status" id="status" required>
+            <option value="ongoing" {% if project.status == 'ongoing' %}selected{% endif %}>Ongoing</option>
+            <option value="completed" {% if project.status == 'completed' %}selected{% endif %}>Completed</option>
+        </select>
+
+        <button type="submit">Update Status</button>
+    </form>
+    
+    <a href="{{ url_for('project_list') }}">Back to Project List</a>
+</body>
+</html>
