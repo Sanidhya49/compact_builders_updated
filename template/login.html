@@ -9,8 +9,23 @@
 <body id="body-main">
     <div class="particles" id="particles-container"></div>
     <div class="form-container" id="form-container-main">
-        <div class="logo" id="logo-main"><a href="download.png"></a></div>
-        <h1 id="heading-main">Compact Builders</h1>
+        <div class="logo" id="logo-main">
+            <img src="https://www.compactbuilders.net/logo1.png" alt="Compact Builders Logo">
+
+            <style>
+                #logo-main {
+                    width: 400px;
+                    height: 200px;
+                    margin: 0 auto 20px;
+                    overflow: hidden;
+                    border-radius: 5%; 
+                }
+                #logo-main img {
+                    width: 100%;
+                    height: 100%;
+                }
+            </style>
+        </div>
         <form id="login-form">
             <div class="input-group" id="login-email-group">
                 <input type="email" required id="login-email-input">
